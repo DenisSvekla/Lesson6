@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Masterskaya {
     @Test
-    public void test1 () throws InterruptedException {
+    public void test1 () {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -18,10 +18,10 @@ public class Masterskaya {
         driver.get("https://masterskayapola.ru/kalkulyator/laminata.html");
         WebElement leightInput = driver.findElement(By.name("calc_roomwidth"));
         leightInput.clear();
-        leightInput.sendKeys("6");
+        leightInput.sendKeys("3,000");
         WebElement widthInput = driver.findElement(By.name("calc_roomheight"));
         widthInput.clear();
-        widthInput.sendKeys("4");
+        widthInput.sendKeys("4,000");
         WebElement lamwidthInput = driver.findElement(By.name("calc_lamwidth"));
         lamwidthInput.clear();
         lamwidthInput.sendKeys("100");
