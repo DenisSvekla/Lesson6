@@ -32,7 +32,7 @@ public class Xpath {
     private static String searchByToAttribute = "//*[@class='form-control '  and @type='text']";
 
     //Использование
-    private  static String searchBySpecificAttrPath
+    private  static String searchBySpecificAttrPath = "//input[@type != 'hidden']";
 
 
 
