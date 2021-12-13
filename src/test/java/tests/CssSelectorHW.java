@@ -13,10 +13,12 @@ public class CssSelectorHW {
     // https://teachmeskills.by/
     @Test
     public void cssSelector() {
+
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
         driver.get("https://teachmeskills.by/");
         WebElement classSelector = driver.findElement(By.cssSelector(".t-submit"));
         WebElement idSelector = driver.findElement(By.cssSelector("#t-footer"));
@@ -35,7 +37,6 @@ public class CssSelectorHW {
         WebElement lastChild = driver.findElement(By.cssSelector("g[fill-rule=evenodd]>rect:last-child"));
         WebElement nthChildFromBegin = driver.findElement(By.cssSelector("body>div:nth-child(3)"));
         WebElement nthChildFromEnd = driver.findElement(By.cssSelector("#t-header~div:nth-last-child(7)"));
-
 
     }
 }
