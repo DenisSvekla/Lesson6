@@ -41,7 +41,7 @@ public class Klubni {
         String actualMDRD1 = driver.findElement(By.id("txtMDRD1")).getText();
         String actualCG = driver.findElement(By.id("txtCG")).getText();
         String actualBSA = driver.findElement(By.id("txtBSA")).getText();
-        Assert.assertEquals(actualMDRD, expecte);
+
 
 
 
