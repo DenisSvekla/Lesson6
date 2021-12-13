@@ -31,6 +31,9 @@ public class Xpath {
     //Использование логического оператора
     private static String searchByToAttribute = "//*[@class='form-control '  and @type='text']";
 
+    //Использование
+    private  static String searchBySpecificAttrPath
+
 
 
     //*[@class='form-control '  and @type='text']
