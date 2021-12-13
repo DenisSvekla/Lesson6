@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class CssSelectorHW {
-// Долго думал, что сделать, но решил пройтись по teachmeskills
+    // Долго думал, что сделать, но решил пройтись по teachmeskills
     // https://teachmeskills.by/
     @Test
     public void cssSelector() {
