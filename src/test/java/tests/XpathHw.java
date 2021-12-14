@@ -25,47 +25,13 @@ public class XpathHw {
         WebElement searchBySubStringPath = driver.findElement(By.xpath("//*[contains(text(), 'на реальных проектах')]"));
         WebElement searchByStratsWith = driver.findElement(By.xpath("//div[starts-with(@id, 'rec82930')]")); // возможно эта айдишка динамическая, но при нескольких обновлений, айдишка не менялась
         WebElement seachWithOperator = driver.findElement(By.xpath("//iframe[@id='roistat-lh-popup-iframe' and @frameborder='0']"));
-
-        //form[@role='form']/div/div/div[@field='title']
-        //form[@class='t-form']
-        //form[@data-success-callback='t720_onSucces
-        //h2[@field='title']
-        //input[@type='hidden']
-
-
-            //Использование логического оператора
-            private static String searchByToAttribute = "//*[@class='form-control '  and @type='text']";
-
-            //Использование логического оператора
-            private static String searchBySpecificAttrPath = "//input[@type != 'hidden']";
-
-            //Axes - оси
-            //поиск всех родителей
-            private static String path1 = "//*[@id='suite_mode_single_baseline']/ancestor::div";
-
-            //Использование child - все предки текущего узла зависят от уровня
-            private static String path2_1 = "//ul/child::li";
-            private static String path2_2 = "//ul/li";  //аналог только проще
-
-
-            // Использование descendant - все предки текущего узла не зависимо от уровня
-            private static String path3_1 = "//ul/desсendant::span";
-            private static String path3_2 = "//ul//span";  //аналог только проще
-
-
-            //Использование following -  выбирает все в документе после закрытия тега текущего узла
-            private static String path4_2 = "(//label[@for='announcement']/following::div/*[@class='checkbox'])[1]";
-
-            //Использование following-sibling -  все предки текущего узла на одном уровне
-            private static String path4_3 = "//label[@for='announcement']/following-sibling::div";
-
-
-            // preceding идентичек following но работает до начала обрезного узла
-
-            private static String path5 = "//label[@for='announcement']/preceding::div";
-            private static String path6 = "//label[@for='announcement']/preceding-sibling::div";
-
-
-        }
+        WebElement pathParentBeforeAncestor = driver.findElement(By.xpath("//*[@id='t-header']/ancestor::div"));
+        WebElement useChild = driver.findElement(By.xpath("(//ul/child::li[@class='t228__list_item'])[2]"));
+        WebElement useDescndant = driver.findElement(By.xpath("//*[@class='t-cover' and contains(@id, 'recorddiv82')]/descendant::div[@class='t001__wrapper']"));
+        WebElement useFollowing = driver.findElement(By.xpath("//*[text()='Помощь в поиске работы']/following::div[@class='t-cover' and @bgimgfield='img']"));
+        WebElement useFollowingSibling = driver.findElement(By.xpath("//*[@id='allrecords']/following-sibling::div[@class='roistat-lh-hidden' and @style]"));
+        WebElement usePreceding = driver.findElement(By.xpath("//*[@class='t-cover__arrow']/preceding::h1"));
+        WebElement usePrecedingSibling = driver.findElement(By.xpath("//*[@class='t-cover__arrow']/preceding-sibling::div[@class='t-container']"));
     }
+}
 
