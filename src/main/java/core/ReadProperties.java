@@ -24,8 +24,8 @@ public class ReadProperties {
         return properties.getProperty("browsertype");
     }
 
-    public static String getHeadless() {
-        return properties.getProperty("headless");
+    public static boolean getHeadless() {
+        return properties.getProperty("headless").equalsIgnoreCase("true");
     }
 
     public static String getUserName() {
