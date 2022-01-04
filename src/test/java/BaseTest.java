@@ -5,34 +5,34 @@ import org.testng.annotations.*;
 public class BaseTest {
     
     //BeforeAnnotation
-    @BeforeTest
-    public void beforeTest() {System.out.println("BeforeTest");} 
-    
-    @BeforeSuite
-    public void beforeSuite() {System.out.println("BeforeSuite"); } 
-    
-    @BeforeGroups
-    public void beforeGroups() {System.out.println("BeforeGroups"); } 
-    
-    @BeforeClass
-    public void beforeClass() {System.out.println("BeforeClass"); } 
-    
+    //@BeforeTest
+    //public void beforeTest() {System.out.println("BeforeTest");}
+
+   // @BeforeSuite
+    //public void beforeSuite() {System.out.println("BeforeSuite"); }
+
+   // @BeforeGroups
+    //public void beforeGroups() {System.out.println("BeforeGroups"); }
+
+   // @BeforeClass
+    //public void beforeClass() {System.out.println("BeforeClass"); }
+
     @BeforeMethod
-    public void beforeMethod() {System.out.println("BeforeMethod"); }
+    public void beforeMethod() {System.out.println("--------calculator started working--------"); }
 
     //AfterAnnotation
-    @AfterTest
-    public void afterTest() {System.out.println("AfterTest");}
+    //@AfterTest
+    //public void afterTest() {System.out.println("AfterTest");}
     
-    @AfterSuite
-    public void afterSuite() {System.out.println("AfterSuite"); }
+    //@AfterSuite
+   // public void afterSuite() {System.out.println("AfterSuite"); }
     
-    @AfterGroups
-    public void afterGroups() {System.out.println("AfterGroups"); }
+    //@AfterGroups
+    //public void afterGroups() {System.out.println("AfterGroups"); }
     
-    @AfterClass
-    public void afterClass() {System.out.println("AfterClass"); }
+    //@AfterClass
+    //public void afterClass() {System.out.println("AfterClass"); }
     
     @AfterMethod
-    public void afterMethod() {System.out.println("AfterMethod"); }
+    public void afterMethod() {System.out.println("--------calculator finished work--------"); }
 }
