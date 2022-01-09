@@ -23,4 +23,14 @@ public class StaticProvider {
 
         };
     }
+    @DataProvider (name = "dataForMult")
+    public static Object [][] dataForMultFunction() {
+        return new Object[][] {
+                {2, 1, 2},
+                {3, 3, 9},
+                {100, -4, -400},
+                {4.1, 1, 4.1},
+
+        };
+    }
 }
