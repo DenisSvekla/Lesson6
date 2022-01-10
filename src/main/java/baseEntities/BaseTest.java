@@ -10,7 +10,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -20,10 +19,12 @@ public class BaseTest {
     protected WebDriver driver;
 
 
+
     @BeforeMethod
+
     public void setUp() {
         switch (ReadProperties.getBrowserType().toLowerCase()) {
-            case "chrome" :
+            case "chrome":
                 WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--disable-gpu"); // отключение графического процесса
@@ -31,8 +32,9 @@ public class BaseTest {
                 chromeOptions.addArguments("--maximize"); // макс. равернутое
                 chromeOptions.setHeadless(ReadProperties.getHeadless());
                 driver = new ChromeDriver(chromeOptions);
+
                 break;
-            case "firefox" :
+            case "firefox":
                 WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
                 driver = new FirefoxDriver();
                 break;
@@ -41,12 +43,18 @@ public class BaseTest {
 
         }
         //driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MICROSECONDS);
+
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.MICROSECONDS);
         driver.get(ReadProperties.getUrl());
+
+
     }
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
     }
-}
+
+
+    }
+

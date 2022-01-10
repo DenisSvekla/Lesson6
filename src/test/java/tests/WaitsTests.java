@@ -13,9 +13,9 @@ public class WaitsTests extends BaseTest {
     public void dd() {
         driver.get("http://the-internet.herokuapp.com/hovers");
         Waits waits = new Waits(driver);
-        WebElement figure = driver.findElement(By.className(".figure"));
+        WebElement figure = driver.findElement(By.className("figure"));
         figure.click();
-        Assert.assertTrue(waits.waitForVisibility(By("//h5[.= 'name: user1']")).isDisplayed(),"true");
+        Assert.assertTrue(waits.waitForVisibility(By.xpath("//h5[.= 'name: user1']")) !=null);
 
 
 
