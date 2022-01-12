@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class AddProjectPage extends BasePage {
 
+    private static String ENDPOINT = "/admin/projects/add/1";
     private By NAME_PROJECT = By.id("name");
     private By ANNOUCEMENT_FIELD = By.id("announcement");
     private By CHECKBOX_SHOW_ANNOUCEMENT = By.id("show_announcement");
@@ -19,6 +20,11 @@ public class AddProjectPage extends BasePage {
 
     public AddProjectPage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    protected void openPage() {
+        driver.get(BASE_URL +ENDPOINT);
     }
 
     //реализация геттеров элементов

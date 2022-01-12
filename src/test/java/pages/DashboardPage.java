@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class DashboardPage extends BasePage {
 
+    private static String ENDPOINT = "/dashboard";
     private By ADD_PROJECT_BUTTON_CREATE = By.id("sidebar-projects-add");
     private By MOST_ACTIVE_BUTTON = By.cssSelector(".link.link-tooltip");
     private By DOWNLOAD_IMG_BUTTON = By.id("png-download");
@@ -16,7 +17,14 @@ public class DashboardPage extends BasePage {
     public DashboardPage(WebDriver driver) {
         super(driver);
     }
+    public DashboardPage(WebDriver driver, boolean openPageByUrl) {
+        super(driver);
+    }
 
+    @Override
+    protected void openPage() {
+        driver.get(BASE_URL +ENDPOINT);
+    }
 
     public WebElement getAddProjectButton () {
         return driver.findElement(ADD_PROJECT_BUTTON_CREATE);

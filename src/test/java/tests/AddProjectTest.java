@@ -2,7 +2,6 @@ package tests;
 
 import baseEntities.BaseTest;
 import core.ReadProperties;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AddProjectPage;
@@ -18,7 +17,7 @@ public class AddProjectTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         DashboardPage dashboardPage = new DashboardPage(driver);
-        loginPage.login(ReadProperties.getUserName(),ReadProperties.getPassword());
+        loginPage.login(ReadProperties.getUsername(),ReadProperties.getPassword());
         dashboardPage.getAddProjectButton().click();
         addProjectPage.createProject("007DenisSv", "не использовать");
         String succesfull = addProjectPage.getSuccesfullMessage().getText();
