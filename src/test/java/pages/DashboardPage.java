@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 public class DashboardPage extends BasePage {
 
     private static String ENDPOINT = "/dashboard";
+    private static final By PAGE_OPENED_IDENTIFIER = By.className("logo-loginpage1");
     private By ADD_PROJECT_BUTTON_CREATE = By.id("sidebar-projects-add");
     private By MOST_ACTIVE_BUTTON = By.cssSelector(".link.link-tooltip");
     private By DOWNLOAD_IMG_BUTTON = By.id("png-download");
@@ -24,6 +25,10 @@ public class DashboardPage extends BasePage {
     @Override
     protected void openPage() {
         driver.get(BASE_URL +ENDPOINT);
+    }
+    @Override
+    protected boolean isPageOpened() {
+        return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
     public WebElement getAddProjectButton () {
