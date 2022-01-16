@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 public class AddProjectPage extends BasePage {
 
     private static String ENDPOINT = "/admin/projects/add/1";
+    // добавить идентификатор страницы
+    private static final By PAGE_OPENED_IDENTIFIER = By.className("logo-loginpage");
     private By NAME_PROJECT = By.id("name");
     private By ANNOUCEMENT_FIELD = By.id("announcement");
     private By CHECKBOX_SHOW_ANNOUCEMENT = By.id("show_announcement");
@@ -25,6 +27,11 @@ public class AddProjectPage extends BasePage {
     @Override
     protected void openPage() {
         driver.get(BASE_URL +ENDPOINT);
+    }
+
+    @Override
+    public boolean isPageOpened() {
+        return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
     //реализация геттеров элементов

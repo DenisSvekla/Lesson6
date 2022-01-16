@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
     private static String ENDPOINT = "/auth/login";
-    private By PAGE_OPENED_IDENTIFIER = By.className("logo-loginpage");
+    private static final By PAGE_OPENED_IDENTIFIER = By.id("button_primary");
     private By EMAIL_INPUT = By.id("name");
     private By PASSWORD_INPUT = By.id("password");
     private By LOGIN_BUTTON = By.id("button_primary");
@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     }
 
     public boolean isPageOpened() {
-        return super.isPageOpened(PAGE_OPENED_IDENTIFIER);
+        return waits.waitForVisibility(PAGE_OPENED_IDENTIFIER).isDisplayed();
     }
 
 

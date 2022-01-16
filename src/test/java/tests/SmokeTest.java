@@ -16,7 +16,6 @@ public class SmokeTest extends BaseTest {
         loginPage.getEmailField().sendKeys(ReadProperties.getUsername());
         loginPage.getPasswordField().sendKeys(ReadProperties.getPassword());
         loginPage.getLoginButton().click();
-        driver.get("https://qa1504.testrail.io/index.php?/admin/overview");
         DashboardPage dashboardPage = new DashboardPage(driver,true);
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
