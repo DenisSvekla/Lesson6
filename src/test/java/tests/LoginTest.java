@@ -8,7 +8,7 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import utils.Retry;
 
-public class SmokeTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
     @Test
     public void loginTest() {
@@ -31,4 +31,12 @@ public class SmokeTest extends BaseTest {
         DashboardPage dashboardPage = new DashboardPage(driver,true);
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
+
+    @Test
+    public void chainTest () {
+        Assert.assertTrue(new LoginPage(driver).successLogin(ReadProperties.getUsername(),ReadProperties.getPassword())
+                .getAddProjectButton().isDisplayed());
+
+    }
+
 }

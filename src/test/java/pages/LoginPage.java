@@ -42,10 +42,24 @@ public class LoginPage extends BasePage {
     public WebElement getPageOpenedIdentified() { return driver.findElement(PAGE_OPENED_IDENTIFIER); }
 
     //реализация базовых методов
-    public void login (String email, String password) {
+    private void populateFields (String email, String password) {
         getEmailField().sendKeys(email);
         getPasswordField().sendKeys(password);
+    }
+    public void login (String email, String password) {
+        populateFields(email, password);
         getLoginButton().click();
+    }
+    public DashboardPage successLogin (String email, String password) {
+       populateFields(email, password);
+       getLoginButton().click();
+        return new DashboardPage(driver);
+    }
+
+    public LoginPage incorrectLogin (String email, String password) {
+        populateFields(email, password);
+        getLoginButton().click();
+        return new LoginPage(driver);
     }
 
 
