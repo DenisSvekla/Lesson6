@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import core.ReadProperties;
+import models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
@@ -37,6 +38,17 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(new LoginPage(driver).successLogin(ReadProperties.getUsername(),ReadProperties.getPassword())
                 .getAddProjectButton().isDisplayed());
 
+    }
+
+    @Test
+    public void loginTestvalue() {
+        User user = new User()
+                .setEmail(ReadProperties.getUsername())
+                .setPassword(ReadProperties.getPassword());
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginWithValue(user);
+        DashboardPage dashboardPage = new DashboardPage(driver,true);
+        Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
 
 }
