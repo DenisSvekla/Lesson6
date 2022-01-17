@@ -46,14 +46,26 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void loginTestvalue() {
-        User user = new User()
-                .setEmail(ReadProperties.getUsername())
-                .setPassword(ReadProperties.getPassword());
+        User user = new User();
+        user.setEmail(ReadProperties.getUsername());
+        user.setPassword(ReadProperties.getPassword());
+
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWithValue(user);
         DashboardPage dashboardPage = new DashboardPage(driver, true);
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
     }
+//    @Test
+//    public void loginTestWithBuilder() {
+//        UserBuilder user = new UserBuilder.Builder()
+//                .withEmail(ReadProperties.getUsername())
+//                .withPassword(ReadProperties.getPassword())
+//                .build();
+//        LoginPage loginPage = new LoginPage(driver);
+//        loginPage.loginWithValue(user);
+//        DashboardPage dashboardPage = new DashboardPage(driver, true);
+//        Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
+//    }
 
     private void setUpProject() {
         addProject = new Project();
