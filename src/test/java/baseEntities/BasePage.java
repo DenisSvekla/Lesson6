@@ -1,8 +1,6 @@
 package baseEntities;
 
 import core.ReadProperties;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import utils.Waits;
 
@@ -14,13 +12,13 @@ public abstract class BasePage {
     protected Waits waits;
 
     public BasePage(WebDriver driver) {
-        this(driver,false);
+        this(driver, false);
     }
 
-    public BasePage (WebDriver driver, boolean openPageByUrl) {
+    public BasePage(WebDriver driver, boolean openPageByUrl) {
         this.driver = driver;
         this.waits = new Waits(driver);
-        this.BASE_URL=ReadProperties.getUrl();
+        this.BASE_URL = ReadProperties.getUrl();
 
         if (openPageByUrl) {
             openPage();
@@ -30,12 +28,13 @@ public abstract class BasePage {
     }
 
     protected abstract void openPage();
+
     protected abstract boolean isPageOpened();
 
-        protected  void waitForOpen () {
+    protected void waitForOpen() {
         int tryCount = 0;
         boolean isPageOpenedIndicator = isPageOpened();
-        while (!isPageOpenedIndicator && tryCount < (WAIT_FOR_PAGE_LOADED_IN_SECONDS/ReadProperties.getTimeOut())){
+        while (!isPageOpenedIndicator && tryCount < (WAIT_FOR_PAGE_LOADED_IN_SECONDS / ReadProperties.getTimeOut())) {
             tryCount++;
             try {
                 Thread.sleep(1000);
@@ -44,6 +43,6 @@ public abstract class BasePage {
             }
             isPageOpenedIndicator = isPageOpened();
         }
-        }
     }
+}
 

@@ -10,19 +10,17 @@ import pages.AddProjectPage;
 import pages.DashboardPage;
 import pages.LoginPage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AddProjectTest extends BaseTest {
 
 
-
     @Test
-    public void succesfullCreateProject () {
+    public void succesfullCreateProject() {
         LoginPage loginPage = new LoginPage(driver);
         AddProjectPage addProjectPage = new AddProjectPage(driver);
         DashboardPage dashboardPage = new DashboardPage(driver);
-        loginPage.login(ReadProperties.getUsername(),ReadProperties.getPassword());
+        loginPage.login(ReadProperties.getUsername(), ReadProperties.getPassword());
         dashboardPage.getAddProjectButton().click();
         addProjectPage.createProject("007DenisSv", "не использовать");
         String succesfull = addProjectPage.getSuccesfullMessage().getText();
@@ -30,13 +28,17 @@ public class AddProjectTest extends BaseTest {
                 "проекта изменилось");
 
     }
+
     @Test
     public void asd() {
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login(ReadProperties.getUsername(),ReadProperties.getPassword());
+        loginPage.login(ReadProperties.getUsername(), ReadProperties.getPassword());
         driver.get("https://qa1504.testrail.io/index.php?/admin/projects/add/1");
         List<WebElement> types = driver.findElements(By.name("suite_mode"));
 
         System.out.println(types.size());
     }
+
+
 }
+
