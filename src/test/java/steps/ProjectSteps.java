@@ -15,8 +15,9 @@ public class ProjectSteps extends BaseStep {
     }
 
     public void addProject(Project project) {
-        AddProjectPage addProjectPage = new AddProjectPage(driver);
-        addProjectPage.createProject(Randomization.getRandomString(9),Randomization.getRandomString(12));
+        addProjectPage.getNameField().sendKeys(project.getName());
+        addProjectPage.
+
 
 
     }

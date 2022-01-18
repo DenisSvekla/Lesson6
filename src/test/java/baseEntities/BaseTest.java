@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import steps.LoginSteps;
 import steps.MilestoneSteps;
 import steps.ProjectSteps;
 import utils.Listener;
@@ -21,6 +22,7 @@ public class BaseTest {
     protected Waits waits;
     protected ProjectSteps projectSteps;
     protected MilestoneSteps milestoneSteps;
+    protected LoginSteps loginSteps;
 
 
     @BeforeMethod
@@ -31,6 +33,7 @@ public class BaseTest {
         driver.get(ReadProperties.getUrl());
         projectSteps = new ProjectSteps(driver);
         milestoneSteps = new MilestoneSteps(driver);
+        loginSteps = new LoginSteps(driver);
     }
 
     @AfterMethod
