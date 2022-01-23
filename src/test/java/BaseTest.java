@@ -1,38 +1,19 @@
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
 
 @Listeners(Listener.class)
 public class BaseTest {
-    
-    //BeforeAnnotation
-    //@BeforeTest
-    //public void beforeTest() {System.out.println("BeforeTest");}
-
-   // @BeforeSuite
-    //public void beforeSuite() {System.out.println("BeforeSuite"); }
-
-   // @BeforeGroups
-    //public void beforeGroups() {System.out.println("BeforeGroups"); }
-
-   // @BeforeClass
-    //public void beforeClass() {System.out.println("BeforeClass"); }
 
     @BeforeMethod
-    public void beforeMethod() {System.out.println("--------calculator started working--------"); }
+    public void beforeMethod() {
+        System.out.println("--------calculator started working--------");
+    }
 
-    //AfterAnnotation
-    //@AfterTest
-    //public void afterTest() {System.out.println("AfterTest");}
-    
-    //@AfterSuite
-   // public void afterSuite() {System.out.println("AfterSuite"); }
-    
-    //@AfterGroups
-    //public void afterGroups() {System.out.println("AfterGroups"); }
-    
-    //@AfterClass
-    //public void afterClass() {System.out.println("AfterClass"); }
-    
+
     @AfterMethod
-    public void afterMethod() {System.out.println("--------calculator finished work--------"); }
+    public void afterMethod() {
+        System.out.println("--------calculator finished work--------");
+    }
 }
