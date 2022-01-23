@@ -33,6 +33,15 @@ public class Project {
                 return this;
             }
 
+            public Builder withYypeOfProject (ProjectType typeOfProject) {
+                newProject.typeOfProject = typeOfProject;
+                        return this;
+            }
+            public Builder withIsCompleted (boolean isCompleted) {
+                newProject.isCompleted = isCompleted;
+                return this;
+            }
+
             public Project build() {
                 return newProject;
             }

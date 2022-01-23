@@ -14,8 +14,6 @@ import utils.Waits;
 
 @Listeners(Listener.class)
 public class BaseTest {
-    public static final String EMAIL_DEFAULT = ReadProperties.getUsername();
-    public static final String PASSWORD_DEFAULT = ReadProperties.getPassword();
 
     protected WebDriver driver;
     protected BrowsersService browsersService;

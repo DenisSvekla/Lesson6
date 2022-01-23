@@ -19,6 +19,7 @@ public class AddProjectPage extends BasePage {
     private By BUTTON_FOR_SMALL_FILTER = By.cssSelector(".icon-display-small");
     private By BUTTON_FOR_BIG_FILTER = By.cssSelector("icon-display-large-inactive");
     private By MESSAGE_ABOUT_SUCCESFULL_ADDED_PROJECT = By.cssSelector(".message-success");
+    private By BUTTON_SAVE_PROJECT = By.id("accept");
 
 
     public AddProjectPage(WebDriver driver) {
@@ -52,6 +53,8 @@ public class AddProjectPage extends BasePage {
         return driver.findElement(ADD_PROJECT_BUTTON);
     }
 
+    public WebElement getSaveProjectButton() { return driver.findElement(BUTTON_SAVE_PROJECT);}
+
     public WebElement getSmallFilterButton() {
         return driver.findElement(BUTTON_FOR_SMALL_FILTER);
     }
@@ -64,10 +67,7 @@ public class AddProjectPage extends BasePage {
         return driver.findElement(By.xpath("//a[contains(@href, 'index.php?/admin/projects/edit/') and text()='" + nameProject + "']"));
     }
 
-    public WebElement getCancelButton(String nameProject) {
-        return driver.findElement(By.xpath("//a[contains(@href,'index.php?/admin/projects/edit/') and text()='" + nameProject + "']" +
-                "/../..//div[@class='icon-small-delete']"));
-    }
+
 
     public WebElement getSuccesfullMessage() {
         return driver.findElement(MESSAGE_ABOUT_SUCCESFULL_ADDED_PROJECT);

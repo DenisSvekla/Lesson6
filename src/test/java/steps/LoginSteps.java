@@ -12,6 +12,7 @@ public class LoginSteps extends BaseStep {
     }
 
     public void loginGeneralUsers (User user) {
+        loginPage = new LoginPage(driver);
         loginPage.getEmailField().sendKeys(user.getEmail());
         loginPage.getPasswordField().sendKeys(user.getPassword());
         loginPage.getLoginButton().click();

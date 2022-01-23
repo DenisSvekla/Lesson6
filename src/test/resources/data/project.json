@@ -1,0 +1,34 @@
+[{
+  "name" : "AQA_07Project",
+  "anouncement": "The smtn",
+  "isShowAnnouncement" : true,
+  "isCompleted" : false,
+  "id" : 1.3,
+  "testCases" : [1, 3, 5],
+  "testCases1" : ["asd", "asdd", "asdd"],
+  "testCases2" : [false, false, true],
+  "employee" : {
+    "name" : "Petrov",
+    "age" : 32,
+    "isDrinker" : false
+  },
+  "mentor" : null
+},
+  {
+    "name" : "AQA_07Project",
+    "anouncement": "The smtn",
+    "isShowAnnouncement" : true,
+    "isCompleted" : false,
+    "id" : 1.3,
+    "testCases" : [1, 3, 5],
+    "testCases1" : ["asd", "asdd", "asdd"],
+    "testCases2" : [false, false, true],
+    "employee" : {
+      "name" : "Petrov",
+      "age" : 32,
+      "isDrinker" : false
+    },
+    "mentor" : null
+  }
+
+]
