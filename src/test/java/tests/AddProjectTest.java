@@ -21,7 +21,7 @@ public class AddProjectTest extends BaseTest {
     // у меня не получилось вынести в отдельный метод натройки проектов, почему то setUp не отра-
     //батывал и у меня не получилось сделать пока проверку, что проект действительно удален
     @Test
-    public void addProject() throws InterruptedException {
+    public void addProject()  {
         user = new User.BuilderUser.Builder()
                 .withEmail(ReadProperties.getUsername())
                 .withPassword(ReadProperties.getPassword())
