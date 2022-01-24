@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.nio.file.WatchEvent;
+
 public final class Waits {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -34,5 +36,13 @@ public final class Waits {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public boolean isElementExisting(WebElement we) {
+        try {
+            we.isDisplayed();
+            return true;
+        } catch(NoSuchElementException e) {
+            return false;
+        }
+    }
 }
 

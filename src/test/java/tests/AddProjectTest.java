@@ -67,7 +67,9 @@ public class AddProjectTest extends BaseTest {
         driver.get("https://qa1504.testrail.io/index.php?/admin/projects/overview");
         GeneralProjectsPage generalProjectsPage = new GeneralProjectsPage(driver);
         projectSteps.deleteProject(updateProject);
-        Assert.assertTrue(generalProjectsPage.getSuccessfullyMessageAboutDeleteProject().isDisplayed());
+        //Assert.assertTrue(generalProjectsPage.getSuccessfullyMessageAboutDeleteProject().isDisplayed());
+        Assert.assertTrue(waits.isElementExisting(generalProjectsPage.findAnyProjectInProject(updateProject.getName())));
 
     }
+
 }
