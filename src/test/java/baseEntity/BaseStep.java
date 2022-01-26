@@ -1,4 +1,4 @@
-package baseEntities;
+package baseEntity;
 
 import org.openqa.selenium.WebDriver;
 import utils.Waits;

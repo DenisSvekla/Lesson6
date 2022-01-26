@@ -2,13 +2,10 @@ package utils;
 
 import core.ReadProperties;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.nio.file.WatchEvent;
 
 public final class Waits {
     private WebDriver driver;
@@ -36,13 +33,4 @@ public final class Waits {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public boolean isElementExisting(WebElement we) {
-        try {
-            we.isDisplayed();
-            return true;
-        } catch(NoSuchElementException e) {
-            return false;
-        }
-    }
 }
-

@@ -1,41 +1,44 @@
-package baseEntities;
+package baseEntity;
 
 import core.BrowsersService;
 import core.ReadProperties;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import steps.LoginSteps;
 import steps.MilestoneSteps;
 import steps.ProjectSteps;
 import utils.Listener;
 import utils.Waits;
 
+import java.util.concurrent.TimeUnit;
+
 @Listeners(Listener.class)
 public class BaseTest {
-
     protected WebDriver driver;
     protected BrowsersService browsersService;
     protected Waits waits;
+
     protected ProjectSteps projectSteps;
     protected MilestoneSteps milestoneSteps;
-    protected LoginSteps loginSteps;
 
-
-    @BeforeMethod
+    @BeforeClass
     public void setUp() {
         browsersService = new BrowsersService();
         driver = browsersService.getDriver();
         waits = new Waits(driver);
-        driver.get(ReadProperties.getUrl());
         projectSteps = new ProjectSteps(driver);
         milestoneSteps = new MilestoneSteps(driver);
-        loginSteps = new LoginSteps(driver);
+
+        driver.get(ReadProperties.getUrl());
     }
 
-    @AfterMethod
-    public void tearDown() {
+    @AfterClass
+    public void closePage() {
         driver.quit();
     }
 }

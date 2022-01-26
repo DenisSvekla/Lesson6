@@ -1,72 +1,57 @@
 package models;
 
 import enums.ProjectType;
+import lombok.Builder;
+import lombok.Data;
 
 public class Project {
     private String name;
-    private String anouncement;
+    private String announcement;
     private boolean isShowAnnouncement;
-    private ProjectType typeOfProject;
+    private int typeOfProject;
     private boolean isCompleted;
+    private User user;
 
-    public static class BuilderProject {
-        private Project newProject;
-
-        public static class Builder {
-            private Project newProject;
-
-            public Builder() {
-                newProject = new Project();
-            }
-
-            public Builder withName(String name) {
-                newProject.name = name;
-                return this;
-            }
-
-            public Builder withAnouncement(String anouncement) {
-                newProject.anouncement = anouncement;
-                return this;
-            }
-            public Builder wihtIsShowAnnouncement(boolean isShowAnnouncement) {
-                newProject.isShowAnnouncement = isShowAnnouncement ;
-                return this;
-            }
-
-            public Builder withYypeOfProject (ProjectType typeOfProject) {
-                newProject.typeOfProject = typeOfProject;
-                        return this;
-            }
-            public Builder withIsCompleted (boolean isCompleted) {
-                newProject.isCompleted = isCompleted;
-                return this;
-            }
-
-            public Project build() {
-                return newProject;
-            }
-        }
-
-
+    public Project() {
     }
 
     public String getName() {
         return name;
     }
 
-    public String getAnouncement() {
-        return anouncement;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAnnouncement() {
+        return announcement;
+    }
+
+    public void setAnnouncement(String announcement) {
+        this.announcement = announcement;
     }
 
     public boolean isShowAnnouncement() {
         return isShowAnnouncement;
     }
 
-    public ProjectType getTypeOfProject() {
+    public void setShowAnnouncement(boolean showAnnouncement) {
+        isShowAnnouncement = showAnnouncement;
+    }
+
+    public int getTypeOfProject() {
         return typeOfProject;
+    }
+
+    public void setTypeOfProject(int typeOfProject) {
+        this.typeOfProject = typeOfProject;
     }
 
     public boolean isCompleted() {
         return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
     }
 }
