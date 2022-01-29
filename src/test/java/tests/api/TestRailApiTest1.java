@@ -24,7 +24,8 @@ public class TestRailApiTest1 extends BaseApiTest {
         given()
                 .when()
                 .get(endpoint)
-                .then().log().body()
+                .then()
+                .log().body()
                 .statusCode(HttpStatus.SC_OK);
     }
 
@@ -33,10 +34,10 @@ public class TestRailApiTest1 extends BaseApiTest {
         String endpoint = "/index.php?/api/v2/add_project";
 
         ProjectBuilder project = ProjectBuilder.builder()
-                .name("WP_Project_01")
+                .name("aaaDencheck")
                 .announcement("This is the description for the project")
                 .isShowAnnouncement(true)
-                .typeOfProject(ProjectType.SINGLE_SUITE_MODE)
+                .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
                 .build();
 
         given()
@@ -52,7 +53,8 @@ public class TestRailApiTest1 extends BaseApiTest {
                         project.getTypeOfProject()))
                 .when()
                 .post(endpoint)
-                .then().log().body()
+                .then()
+                .log().body()
                 .statusCode(HttpStatus.SC_OK);
     }
 
