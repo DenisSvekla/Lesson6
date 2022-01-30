@@ -40,6 +40,7 @@ public class TestRailApiTest1 extends BaseApiTest {
                 .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
                 .build();
 
+
         given()
                 .body(String.format("{\n" +
                         "  \"name\": \"%s\",\n" +

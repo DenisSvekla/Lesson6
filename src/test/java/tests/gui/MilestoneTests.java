@@ -15,13 +15,12 @@ public class MilestoneTests extends BaseTest {
     public void test1() {
         Project project = new Project();
         User user = User.builder().build();
-        Milestone milestone = new Milestone();
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(user);
 
         projectSteps.addProject(project);
-        milestoneSteps.createMilestone(project, milestone);
+
 
 
     }

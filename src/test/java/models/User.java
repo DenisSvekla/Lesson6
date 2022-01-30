@@ -1,7 +1,9 @@
 package models;
 
 import com.google.gson.annotations.SerializedName;
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Builder

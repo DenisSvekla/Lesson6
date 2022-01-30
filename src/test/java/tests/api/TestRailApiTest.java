@@ -48,6 +48,7 @@ public class TestRailApiTest extends BaseApiTest {
         // Setup endpoint
         String endpoint = "/index.php?/api/v2/get_users";
 
+
         given()
                 .when()
                 .get(endpoint)
