@@ -20,7 +20,7 @@ public class ProjectHelper extends BaseHelper {
      */
 
     public ProjectBuilder add(ProjectBuilder project) {
-        response = restManager.post(Endpoints.ADD_PROJECT, null, UserType.ADMIN, ObjectUtils.getJsonFromObject(project, Project.class));
+        response = restManager.post(Endpoints.ADD_PROJECT, null, UserType.ADMIN, ObjectUtils.getJsonFromObject(project, ProjectBuilder.class));
         return gson.fromJson(response.asString(), ProjectBuilder.class);
     }
 
