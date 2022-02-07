@@ -20,7 +20,7 @@ public class Listener implements ITestListener {
         } catch (Exception ex) {
 
         }
-        }
+    }
 
     @Attachment(value = "Page screenshot", type = "image/png")
     private byte[] saveScreenshot(byte[] screenshot) {

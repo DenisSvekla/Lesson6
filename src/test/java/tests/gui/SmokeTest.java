@@ -2,12 +2,14 @@ package tests.gui;
 
 import baseEntity.BaseTest;
 import core.ReadProperties;
+import io.qameta.allure.Attachment;
 import models.Project;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DashboardPage;
 import pages.LoginPage;
+import steps.ProjectSteps;
 import utils.Randomization;
 import utils.Retry;
 
@@ -42,6 +44,17 @@ public class SmokeTest extends BaseTest {
 
         dashboardPage = new DashboardPage(driver, true);
         Assert.assertTrue(dashboardPage.getAddProjectButton().isDisplayed());
+    }
+
+
+    @Test
+    public void stepTest() {
+        setupProjects();
+        ProjectSteps projectSteps = new ProjectSteps(driver);
+        projectSteps.addProject(addProject);
+        Assert.assertTrue(false);
+
+
     }
 
 
