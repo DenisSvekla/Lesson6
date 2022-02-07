@@ -29,4 +29,8 @@ public class Randomization {
     public static int getRandomType() {
         return gerRandomInt(2) + 1;
     }
+
+
+    public static int getRandomTestCaseType () { return gerRandomInt(12);
+    }
 }

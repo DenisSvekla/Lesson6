@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class MilestonesTest extends BaseApiTest {
+public class MilestonesTestHw extends BaseApiTest {
     int milestoneID;
     int projectId;
     ProjectBuilder projectBuilder;
