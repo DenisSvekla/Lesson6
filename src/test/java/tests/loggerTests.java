@@ -28,7 +28,7 @@ public class loggerTests {
         if (b==0) {
             logger.fatal("делитель равен нулю");
         }
-        int c = a/b;
+        int cc = a/b;
 
         logger.trace("login test is finished");
         }
