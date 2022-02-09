@@ -1,7 +1,8 @@
 package tests;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.testng.annotations.Test;
 
 
@@ -25,12 +26,12 @@ public class loggerTests {
         int a = 10;
         int b = 0;
 
-        if (b==0) {
+        if (b == 0) {
             logger.fatal("делитель равен нулю");
         }
-        int cc = a/b;
+        int cc = a / b;
 
         logger.trace("login test is finished");
-        }
     }
+}
 

@@ -18,11 +18,17 @@ public class ProjectPage {
     private String ADD_PROJECT_BUTTON = "#accept";
 
 
-    public SelenideElement getNameField() { return $(NAME_FIELD); }
+    public SelenideElement getNameField() {
+        return $(NAME_FIELD);
+    }
 
-    public SelenideElement getAnnouncementField() { return $(ANNOUNCEMENT_FIELD); }
+    public SelenideElement getAnnouncementField() {
+        return $(ANNOUNCEMENT_FIELD);
+    }
 
-    public SelenideElement getAddProjectButton() { return $(ADD_PROJECT_BUTTON); }
+    public SelenideElement getAddProjectButton() {
+        return $(ADD_PROJECT_BUTTON);
+    }
 
     public void setType(ProjectType type) {
         $(By.xpath(typeRadioButtonSelector.replace("replace", String.valueOf(type))));
