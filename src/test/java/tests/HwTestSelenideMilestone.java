@@ -1,6 +1,6 @@
 package tests;
 
-import BaseEntities.BaseTest;
+import BaseEntities.BaseTestSelenide;
 import Pages.DashboardPage;
 import Pages.LoginPage;
 import Pages.MilestonePage;
@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class HwTestMilestone extends BaseTest {
+public class HwTestSelenideMilestone extends BaseTestSelenide {
     Project project;
     Milestone newMilestone;
     Milestone updateMilestone;
@@ -29,9 +29,10 @@ public class HwTestMilestone extends BaseTest {
         open("/admin/projects/add/1");
         ProjectPage projectPage = new ProjectPage();
         projectPage.addProject(project);
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.getAddProjectButton();
-        open("/dashboard");
+        DashboardPage dashboardPage = new DashboardPage(true);
+
+//        dashboardPage.getAddProjectButton();
+//        open("/dashboard");
         dashboardPage.getMilestonesButtonForAnyProject(project.getName()).click();
         MilestonePage milestonePage = new MilestonePage();
         milestonePage.getAddMilestoneButtonFirst().click();

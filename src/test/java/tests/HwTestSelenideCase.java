@@ -1,6 +1,6 @@
 package tests;
 
-import BaseEntities.BaseTest;
+import BaseEntities.BaseTestSelenide;
 import Pages.CasePage;
 import Pages.DashboardPage;
 import Pages.LoginPage;
@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class HwTestCase extends BaseTest {
+public class HwTestSelenideCase extends BaseTestSelenide {
     Project project;
     Case newCase;
     Case updateCase;

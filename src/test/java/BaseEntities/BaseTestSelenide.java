@@ -5,7 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.annotations.BeforeClass;
 
 
-public class BaseTest {
+public class BaseTestSelenide {
 
 
     @BeforeClass
