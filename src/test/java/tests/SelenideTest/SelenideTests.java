@@ -13,7 +13,6 @@ import selenidePage.LoginPage;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;

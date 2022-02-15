@@ -1,11 +1,6 @@
 package tests.gui;
 
 import baseEntity.BaseTest;
-import models.Milestone;
-import models.Project;
-import models.User;
-import org.testng.annotations.Test;
-import pages.LoginPage;
 
 public class MilestoneTests extends BaseTest {
 

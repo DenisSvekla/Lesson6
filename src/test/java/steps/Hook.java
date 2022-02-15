@@ -19,13 +19,14 @@ public class Hook extends BaseCucumberTest {
 
         baseCucumberTest.driver = new BrowsersService().getDriver();
     }
+
     @After
     public void tearDown(Scenario scenario) {
-        if(scenario.isFailed()) {
+        if (scenario.isFailed()) {
             System.out.println("make a screenshot");
         }
 
-        if (baseCucumberTest.driver !=null) {
+        if (baseCucumberTest.driver != null) {
             baseCucumberTest.driver.quit();
         }
     }

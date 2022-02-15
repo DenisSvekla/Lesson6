@@ -12,14 +12,11 @@ import static com.codeborne.selenide.Selenide.open;
 public class ProjectPage {
 
     private static String typeRadioButtonSelector = "//*[@name = 'suite_mode' and @value='replace']";
-
-    private String NAME_FIELD = "#name";
-
-    private String ANNOUNCEMENT_FIELD = "#announcement";
-
-    private String ADD_PROJECT_BUTTON = "#accept";
-
     private static String ENDPOINT = "/admin/projects/add/1";
+    private String NAME_FIELD = "#name";
+    private String ANNOUNCEMENT_FIELD = "#announcement";
+    private String ADD_PROJECT_BUTTON = "#accept";
+    private String ADD_CASE_BUTTON = "#sidebar-cases-add";
 
     public ProjectPage() {
 
@@ -50,6 +47,10 @@ public class ProjectPage {
 
     public void setType(ProjectType type) {
         $(By.xpath(typeRadioButtonSelector.replace("replace", String.valueOf(type))));
+    }
+
+    public SelenideElement getAddButtonCase() {
+        return $(ADD_CASE_BUTTON);
     }
 
     public void addProject(Project project) {

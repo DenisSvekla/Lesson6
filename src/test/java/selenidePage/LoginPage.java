@@ -8,10 +8,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
+    private static String ENDPOINT = "/auth/login/";
     private final By userName = By.id("name");
     private final String userPassword = "#password";
     private final String login_button_selector = "#button_primary";
-    private static String ENDPOINT = "/auth/login/";
 
     public LoginPage() {
 

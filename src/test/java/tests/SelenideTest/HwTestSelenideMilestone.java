@@ -4,17 +4,13 @@ package tests.SelenideTest;
 import baseEntity.BaseTestSelenide;
 import com.codeborne.selenide.Configuration;
 import core.ReadProperties;
-import io.cucumber.java.hu.De;
 import models.Milestone;
 import models.Project;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import selenidePage.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HwTestSelenideMilestone extends BaseTestSelenide {
@@ -60,12 +56,11 @@ public class HwTestSelenideMilestone extends BaseTestSelenide {
 
     @Test(dependsOnMethods = "deleteMilestone")
     public void deleteProject() {
-        open("/admin/projects/overview");
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.getCancelButton(project.getName()).click();
-        $(byText("Yes, delete this project (cannot be undone)")).click();
-        $(By.xpath("//div[@id='deleteDialog']//a[@class = 'button button-ok button-left button-positive dialog-action-default']")).click();
-
+        AdminProjects adminProjects = new AdminProjects(true);
+        adminProjects.getCancelButton(project.getName()).click();
+        DeleteProjectPopup deleteProjectPopup = new DeleteProjectPopup();
+        deleteProjectPopup.getCheckBoxField().click();
+        deleteProjectPopup.getOkButton().click();
     }
 
 
@@ -82,7 +77,7 @@ public class HwTestSelenideMilestone extends BaseTestSelenide {
         loginPage.loginUsers();
 
         project = Project.builder()
-                .name("0000123")
+                .name("trust")
                 .announcement("444")
                 .build();
 

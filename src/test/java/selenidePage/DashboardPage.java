@@ -4,14 +4,15 @@ import com.codeborne.selenide.SelenideElement;
 import core.ReadProperties;
 import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DashboardPage {
 
+    private static String ENDPOINT = "/dashboard";
     private By ADD_PROJECT_BUTTON_CREATE = By.id("sidebar-projects-add");
     private By MOST_ACTIVE_BUTTON = By.cssSelector(".link.link-tooltip");
-    private static String ENDPOINT = "/dashboard";
 
     public DashboardPage() {
 
@@ -24,9 +25,8 @@ public class DashboardPage {
     }
 
     protected void openPage() {
-       open(ReadProperties.getUrl() + ENDPOINT);
+        open(ReadProperties.getUrl() + ENDPOINT);
     }
-
 
 
     public SelenideElement getAddProjectButton() {
@@ -45,6 +45,9 @@ public class DashboardPage {
     public SelenideElement getCancelButton(String nameProject) {
         return $(By.xpath("//a[contains(@href,'index.php?/admin/projects/edit/') and text()='" + nameProject + "']" +
                 "/../..//div[@class='icon-small-delete']"));
+    }
 
+    public SelenideElement getAnyProject(String nameProject) {
+        return $(byText(nameProject));
     }
 }

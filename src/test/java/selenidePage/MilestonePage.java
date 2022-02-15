@@ -43,6 +43,7 @@ public class MilestonePage {
     public SelenideElement getSuccessfulMessageAboutAddedMilestone() {
         return $(SUCCESSFUL_MESSAGE_ABOUT_ADDING);
     }
+
     public SelenideElement getSuccessfulMessageAboutDeletedMilestone() {
         return $(SUCCESSFUL_MESSAGE_ABOUT_DELETE_MILESTONE);
     }
@@ -52,12 +53,13 @@ public class MilestonePage {
     }
 
     public SelenideElement getMilestoneByName(String nameMilestone) {
-       return  $(byText(nameMilestone));
+        return $(byText(nameMilestone));
     }
 
-    public SelenideElement getEditButton () {
+    public SelenideElement getEditButton() {
         return $(byText("Edit"));
     }
+
     public SelenideElement getDeleteMilestoneButton() {
         return $(DELETE_MILESTONE_BUTTON);
     }

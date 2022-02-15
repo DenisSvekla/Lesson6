@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class DeleteMilestonePopup {
-    private By CHECK_BOX_WITH_CONFIRMATION = byText("Yes, delete this milestone (cannot be undone)");
+public class DeleteProjectPopup {
+    private By CHECK_BOX_WITH_CONFIRMATION = byText("Yes, delete this project (cannot be undone)");
     private By OK_BUTTON = By.xpath("//div[@id='deleteDialog']//a[@class = 'button button-ok button-left button-positive dialog-action-default']");
 
 

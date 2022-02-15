@@ -6,17 +6,11 @@ import com.codeborne.selenide.Configuration;
 import core.ReadProperties;
 import models.Case;
 import models.Project;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import selenidePage.CasePage;
-import selenidePage.DashboardPage;
-import selenidePage.LoginPage;
-import selenidePage.ProjectPage;
+import selenidePage.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HwTestSelenideCase extends BaseTestSelenide {
@@ -27,43 +21,43 @@ public class HwTestSelenideCase extends BaseTestSelenide {
     @Test
     public void addCase() {
         setUp();
-        open("/admin/projects/add/1");
-        ProjectPage projectPage = new ProjectPage();
+        ProjectPage projectPage = new ProjectPage(true);
         projectPage.addProject(project);
-        open("/dashboard");
-        $(byText(project.getName())).click();
-        $("#sidebar-cases-add").click();
+        DashboardPage dashboardPage = new DashboardPage(true);
+        dashboardPage.getAnyProject(project.getName()).click();
+        projectPage.getAddButtonCase().click();
         CasePage casePage = new CasePage();
         casePage.addCase(newCase);
-        $(By.xpath("//*[@class = 'message message-success']")).shouldBe(visible);
-        $(byText("Add another")).shouldBe(visible);
+        casePage.getSuccessfulMessage().shouldBe(visible);
 
 
     }
 
     @Test(dependsOnMethods = "addCase")
     public void updateCase() {
-        $(byText("Edit")).click();
         CasePage casePage = new CasePage();
+        casePage.getEditButton().click();
         casePage.updateCase(updateCase);
         casePage.getSuccessfulMessage().shouldBe(visible).shouldHave(text("Successfully updated the test case."));
     }
 
     @Test(dependsOnMethods = "updateCase")
     public void deleteCase() {
-        $(byText("Edit")).click();
-        $(byText("Delete this test case")).click();
-        $(By.xpath("//a[@onclick = 'this.blur(); App.Cases.confirmDeletion(false, false); return false;']")).click();
-        $(By.xpath("//*[@class = 'message message-success']")).shouldBe(visible).shouldHave(text("Successfully flagged the test case as deleted."));
+        CasePage casePage = new CasePage();
+        casePage.getEditButton().click();
+        casePage.getDeleteButton().click();
+        DeleteCasePopupPage deleteCasePopupPage = new DeleteCasePopupPage();
+        deleteCasePopupPage.getMarkDeleteButton().click();
+        casePage.getSuccessfulMessage().shouldBe(visible).shouldHave(text("Successfully flagged the test case as deleted."));
     }
 
     @Test(dependsOnMethods = "deleteCase")
     public void deleteProject() {
-        open("/admin/projects/overview");
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.getCancelButton(project.getName()).click();
-        $(byText("Yes, delete this project (cannot be undone)")).click();
-        $(By.xpath("//div[@id='deleteDialog']//a[@class = 'button button-ok button-left button-positive dialog-action-default']")).click();
+        AdminProjects adminProjects = new AdminProjects(true);
+        adminProjects.getCancelButton(project.getName()).click();
+        DeleteProjectPopup deleteProjectPopup = new DeleteProjectPopup();
+        deleteProjectPopup.getCheckBoxField().click();
+        deleteProjectPopup.getOkButton().click();
 
     }
 
