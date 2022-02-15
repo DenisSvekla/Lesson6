@@ -8,7 +8,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import models.User;
 import org.testng.Assert;
 import pages.DashboardPage;
@@ -17,6 +16,7 @@ import pages.LoginPage;
 public class FirstStepdefs extends BaseCucumberTest {
 
     LoginPage loginPage;
+
     @Given("открыт браузер")
     public void browserIsStarted() {
         driver = new BrowsersService().getDriver();

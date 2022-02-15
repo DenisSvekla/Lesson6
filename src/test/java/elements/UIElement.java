@@ -9,9 +9,9 @@ import java.util.List;
 
 public class UIElement implements WebElement {
     private final WebDriver driver;
+    private final Waits waits;
     private By by = null;
     private WebElement webElement;
-    private final Waits waits;
 
     public UIElement(WebDriver driver, By by) {
         this.driver = driver;
