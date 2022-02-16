@@ -19,7 +19,7 @@ import utils.Randomization;
 public class BaseTest {
     public WebDriver driver;
     protected BrowsersService browsersService;
-    protected Waits waits;
+
 
     protected ProjectSteps projectSteps;
     protected MilestoneSteps milestoneSteps;
@@ -50,7 +50,6 @@ public class BaseTest {
     public void setUp() {
         browsersService = new BrowsersService();
         driver = browsersService.getDriver();
-        waits = new Waits(driver);
         projectSteps = new ProjectSteps(driver);
         milestoneSteps = new MilestoneSteps(driver);
 

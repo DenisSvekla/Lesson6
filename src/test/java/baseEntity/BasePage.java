@@ -10,7 +10,7 @@ public abstract class BasePage {
 
     protected WebDriver driver;
     protected String BASE_URL;
-    protected Waits waits;
+
 
     public BasePage(WebDriver driver) {
         this(driver, false);
@@ -18,7 +18,6 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver, boolean openPageByUrl) {
         this.driver = driver;
-        this.waits = new Waits(driver);
         this.BASE_URL = ReadProperties.getUrl();
 
         if (openPageByUrl) {
