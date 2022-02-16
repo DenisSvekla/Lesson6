@@ -2,7 +2,7 @@ package core;
 
 import java.io.IOException;
 import java.util.Properties;
-
+//asdsad
 public class ReadProperties {
     private static Properties properties = null;
     private static String filename = "config.properties";

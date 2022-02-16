@@ -10,6 +10,8 @@ public class LombokTest extends BaseTest {
     Project addProject;
     Project updateProject;
 
+
+    //asdasd
     @Test
     public void loginTest() {
         User user = User.builder()

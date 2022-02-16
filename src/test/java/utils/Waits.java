@@ -11,6 +11,7 @@ public final class Waits {
     private WebDriver driver;
     private WebDriverWait wait;
 
+    //asdsad
     public Waits(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, ReadProperties.getTimeOut());

@@ -7,6 +7,8 @@ import pages.DashboardPage;
 import pages.LoginPage;
 
 public class SmokeTest extends BaseTest {
+
+    //asdasdasd
     @Test
     public void loginTest() {
         LoginPage loginPage = new LoginPage(driver);

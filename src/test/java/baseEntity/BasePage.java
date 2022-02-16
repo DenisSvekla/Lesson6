@@ -4,7 +4,7 @@ package baseEntity;
 import core.ReadProperties;
 import org.openqa.selenium.WebDriver;
 import utils.Waits;
-
+//asdsad
 public abstract class BasePage {
     protected static final int WAIT_FOR_PAGE_LOADED_IN_SECONDS = 30;
 
